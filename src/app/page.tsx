@@ -713,7 +713,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Contacto</h3>
                 <p className="mb-4">
-                  Riobravo - Vendedor exclusivo de lotes de 1,500 m² en Finca Rio Bravo. Tu oportunidad de invertir en terrenos con excelente potencial.
+                  Riobravo - Vendedor exclusivo de lotes desde 1,000 m² en Finca Rio Bravo. Tu oportunidad de invertir en terrenos con excelente potencial.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center">
