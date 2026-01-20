@@ -4,7 +4,7 @@ import { loteConfig } from '@/data/loteConfig';
 
 export default function Home() {
   const handleWhatsAppClick = (phoneNumber: string, country: string, interest?: string) => {
-    let message = 'Hola, estoy interesado en obtener información sobre los lotes en Finca Rio Bravo.';
+    let message = loteConfig.whatsappMessages.default;
     if (interest) {
       message += ` Me interesa: ${interest}.`;
     }
@@ -14,12 +14,6 @@ export default function Home() {
       : `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(url, '_blank');
   };
-
-  const whatsappNumbers = [
-    { number: '3124915127', display: '312 491 5127', country: 'co' },
-    { number: '3125123639', display: '312 512 3639', country: 'co' },
-    { number: '19549315153', display: '+1 (954) 931-5153', country: 'us' }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -31,13 +25,13 @@ export default function Home() {
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">RB</span>
               </div>
-              <span className="text-xl font-bold">Riobravo</span>
+              <span className="text-xl font-bold">{loteConfig.contact.companyName}</span>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="hidden md:flex items-center space-x-2">
                 <span className="text-sm text-gray-600">WhatsApp:</span>
-                {whatsappNumbers.slice(0, 2).map((phone, index) => (
+                {loteConfig.contact.whatsappNumbers.slice(0, 2).map((phone, index) => (
                   <button
                     key={index}
                     onClick={() => handleWhatsAppClick(phone.number, phone.country)}
@@ -72,20 +66,20 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="inline-flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg">
               <span>🚀</span>
-              <span>PRECIO DE LANZAMIENTO</span>
+              <span>{loteConfig.hero.badge}</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Riobravo - Lotes Exclusivos desde {loteConfig.hero.surface}
+              {loteConfig.hero.title}
             </h1>
             
             <p className="text-xl text-gray-100 mb-8 drop-shadow">
-              Tu oportunidad de invertir en el futuro con terrenos premium en Finca Rio Bravo
+              {loteConfig.hero.subtitle}
             </p>
             
             <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/20">
               <div className="text-4xl font-bold text-white mb-6">
-                {loteConfig.hero.price}
+                {loteConfig.hero.price} por lote
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -107,7 +101,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 shadow-lg"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country)}
+                onClick={() => handleWhatsAppClick(
+                  loteConfig.contact.whatsappNumbers[0].number, 
+                  loteConfig.contact.whatsappNumbers[0].country
+                )}
               >
                 📱 Contactar por WhatsApp
               </button>
@@ -132,37 +129,15 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌳</span>
+            {loteConfig.benefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">{benefit.emoji}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Área Verde</h3>
-              <p className="text-gray-600">Lotes por metro cuadrado más económico del sector</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚗</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Acceso Vial</h3>
-              <p className="text-gray-600">Vías de acceso</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📈</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Plusvalía</h3>
-              <p className="text-gray-600">Excelente potencial de revalorización</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏠</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Servicios</h3>
-              <p className="text-gray-600">Agua</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -180,42 +155,20 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💧</span>
+            {loteConfig.locationBenefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className={`w-16 h-16 ${benefit.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <span className="text-2xl">{benefit.emoji}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Fuentes Hídricas</h3>
-              <p className="text-gray-600">Fuentes hídricas cercanas</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏔️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Paisajes Naturales</h3>
-              <p className="text-gray-600">Paisajes de montaña y aire puro</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤫</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Tranquilidad</h3>
-              <p className="text-gray-600">Silencio y conexión con la naturaleza</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚗</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Acceso Fácil</h3>
-              <p className="text-gray-600">A pocos minutos del casco urbano, con vías de fácil acceso</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CUARTO BLOQUE - Financing Options (MODIFICADO PARA USAR CONFIG) */}
+      {/* CUARTO BLOQUE - Financing Options */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -229,7 +182,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {loteConfig.plans.map((plan) => (
-              <div key={plan.id} className={`bg-white rounded-lg shadow-xl p-6 border-2 ${plan.borderClass} relative`}>
+              <div 
+                key={plan.id}
+                className={`bg-white rounded-lg shadow-xl p-6 border-2 ${plan.borderClass} relative`}
+              >
                 {plan.isPopular && (
                   <div className="absolute top-0 right-0 bg-green-600 text-white px-3 py-1 text-sm font-medium">
                     {plan.badgeText}
@@ -237,7 +193,7 @@ export default function Home() {
                 )}
                 
                 <div className="text-center mb-4">
-                  <div className="text-3xl mb-2">💰</div>
+                  <div className="text-3xl mb-2">{plan.emoji}</div>
                   <h3 className="text-xl font-bold">{plan.title}</h3>
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
@@ -273,7 +229,7 @@ export default function Home() {
                 <div className="border-t pt-4">
                   <p className="text-sm font-medium text-gray-900 mb-2">📱️ Contáctanos por WhatsApp:</p>
                   <div className="space-y-2">
-                    {whatsappNumbers.map((phone, index) => (
+                    {loteConfig.contact.whatsappNumbers.map((phone, index) => (
                       <button
                         key={index}
                         onClick={() => handleWhatsAppClick(phone.number, phone.country, plan.title)}
@@ -301,11 +257,10 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-full text-lg font-medium mb-8 shadow-lg">
               <span className="text-2xl">🌲</span>
-              <span className="text-lg">Lote + Cabaña Prefabricada: el espacio perfecto para tu estilo de vida</span>
+              <span className="text-lg">{loteConfig.cabins.heroTitle}</span>
             </div>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Imagina tu lugar ideal: un terreno de 1500 m² y una cabaña diseñada a tu medida.
-              <br />Tú eliges el diseño, los acabados y el tamaño. Nosotros hacemos realidad tu proyecto.
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto whitespace-pre-line">
+              {loteConfig.cabins.heroSubtitle}
             </p>
             
             {/* Valores de Referencia */}
@@ -314,17 +269,17 @@ export default function Home() {
               
               <div className="grid md:grid-cols-2 gap-6 text-center mb-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="text-xl font-bold text-green-600 mb-1">Lote (1500 m²)</div>
-                  <div className="text-gray-700">Desde $65 millones</div>
+                  <div className="text-xl font-bold text-green-600 mb-1">Lote ({loteConfig.cabins.loteSize})</div>
+                  <div className="text-gray-700">{loteConfig.cabins.lotePrice}</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="text-xl font-bold text-green-600 mb-1">Cabaña prefabricada</div>
-                  <div className="text-gray-700">Valor según diseño y acabados</div>
+                  <div className="text-gray-700">{loteConfig.cabins.cabinPrice}</div>
                 </div>
               </div>
               
               <div className="text-center">
-                <div className="text-xl font-semibold text-gray-900 mb-2">Total: a convenir según tu proyecto personalizado</div>
+                <div className="text-xl font-semibold text-gray-900 mb-2">{loteConfig.cabins.totalNote}</div>
                 <div className="text-sm text-gray-600">✨ Tú imaginas, nosotros lo construimos</div>
               </div>
             </div>
@@ -340,113 +295,35 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Cabaña Moderna */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">🏠</div>
-                <h3 className="text-xl font-bold">Cabaña Moderna</h3>
-                <p className="text-gray-600">Diseño contemporáneo, funcional y lleno de luz natural.</p>
-              </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Perfecta para quienes buscan comodidad y estilo.
-              </p>
-              <button 
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Cabaña Moderna')}
+            {loteConfig.cabins.models.map((cabin) => (
+              <div 
+                key={cabin.id}
+                className={`${cabin.isSpecial ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300' : 'bg-white border border-gray-200'} rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow`}
               >
-                Solicitar información
-              </button>
-            </div>
-
-            {/* Cabaña Familiar */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">🏡</div>
-                <h3 className="text-xl font-bold">Cabaña Familiar</h3>
-                <p className="text-gray-600">Amplia y acogedora, ideal para disfrutar con la familia o amigos.</p>
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-3">{cabin.emoji}</div>
+                  <h3 className={`text-xl font-bold ${cabin.isSpecial ? 'text-green-800' : ''}`}>
+                    {cabin.title}
+                  </h3>
+                  <p className={cabin.isSpecial ? 'text-gray-700' : 'text-gray-600'}>
+                    {cabin.description}
+                  </p>
+                </div>
+                <p className={`text-sm ${cabin.isSpecial ? 'text-gray-700' : 'text-gray-700'} text-center mb-4`}>
+                  {cabin.detail}
+                </p>
+                <button 
+                  className={`w-full ${cabin.isSpecial ? 'bg-green-700 hover:bg-green-800' : 'bg-green-600 hover:bg-green-700'} text-white py-2 rounded-lg`}
+                  onClick={() => handleWhatsAppClick(
+                    loteConfig.contact.whatsappNumbers[0].number, 
+                    loteConfig.contact.whatsappNumbers[0].country, 
+                    cabin.title
+                  )}
+                >
+                  {cabin.isSpecial ? 'Diseñar mi cabaña' : 'Solicitar información'}
+                </button>
               </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Pensada para quienes valoran el confort y la convivencia.
-              </p>
-              <button 
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Cabaña Familiar')}
-              >
-                Solicitar información
-              </button>
-            </div>
-
-            {/* Cabaña Acogedora */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">🏚️</div>
-                <h3 className="text-xl font-bold">Cabaña Acogedora</h3>
-                <p className="text-gray-600">Compacta, práctica y cálida.</p>
-              </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Ideal como refugio de descanso o inversión vacacional.
-              </p>
-              <button 
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Cabaña Acogedora')}
-              >
-                Solicitar información
-              </button>
-            </div>
-
-            {/* Cabaña Compacta */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">🏘️</div>
-                <h3 className="text-xl font-bold">Cabaña Compacta</h3>
-                <p className="text-gray-600">Diseño eficiente y funcional.</p>
-              </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Perfecta para quienes buscan un espacio inteligente y económico.
-              </p>
-              <button 
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Cabaña Compacta')}
-              >
-                Solicitar información
-              </button>
-            </div>
-
-            {/* Cabaña Premium */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">🏰</div>
-                <h3 className="text-xl font-bold">Cabaña Premium</h3>
-                <p className="text-gray-600">Lujo y elegancia en cada detalle.</p>
-              </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Creada para quienes quieren una experiencia exclusiva en la naturaleza.
-              </p>
-              <button 
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Cabaña Premium')}
-              >
-                Solicitar información
-              </button>
-            </div>
-
-            {/* Proyecto Personalizado */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg shadow-lg p-6 border-2 border-green-300 hover:shadow-xl transition-shadow">
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-3">✨</div>
-                <h3 className="text-xl font-bold text-green-800">Proyecto Personalizado</h3>
-                <p className="text-gray-700">Diseña la cabaña de tus sueños.</p>
-              </div>
-              <p className="text-sm text-gray-700 text-center mb-4">
-                Creamos espacios únicos, sostenibles y listos para habitar o rentar.
-              </p>
-              <button 
-                className="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800"
-                onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country, 'Proyecto Personalizado')}
-              >
-                Diseñar mi cabaña
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -476,7 +353,7 @@ export default function Home() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {whatsappNumbers.map((phone, index) => (
+              {loteConfig.contact.whatsappNumbers.map((phone, index) => (
                 <button
                   key={index}
                   onClick={() => handleWhatsAppClick(phone.number, phone.country, 'Asesoría de inversión')}
@@ -507,8 +384,10 @@ export default function Home() {
                   <span className="text-2xl">📍</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Finca Rio Bravo</h3>
-                  <p className="text-gray-600">Sector Román, a 10 minutos del casco urbano del municipio de Arboledas. Ubicación privilegiada con fácil acceso.</p>
+                  <h3 className="text-xl font-bold">{loteConfig.location.name}</h3>
+                  <p className="text-gray-600">
+                    {loteConfig.location.sector}, a {loteConfig.location.distance}. Ubicación privilegiada con fácil acceso.
+                  </p>
                 </div>
               </div>
 
@@ -533,9 +412,9 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Visítanos</h3>
                 <p className="text-gray-600 mb-4">
-                  Finca Rio Bravo<br />
-                  Sector Román, Arboledas<br />
-                  Norte de Santander, Colombia
+                  {loteConfig.location.name}<br />
+                  {loteConfig.location.sector}, {loteConfig.location.municipality}<br />
+                  {loteConfig.location.department}, {loteConfig.location.country}
                 </p>
                 <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
                   🗺️ Abrir en Google Maps
@@ -549,7 +428,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Ubicación Premium</h4>
-                    <p className="text-gray-600">Finca Rio Bravo, Sector Román</p>
+                    <p className="text-gray-600">{loteConfig.location.name}, {loteConfig.location.sector}</p>
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">Visítanos para conocer los terrenos</p>
@@ -563,24 +442,18 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Contacto</h3>
                 <p className="mb-4">
-                  Riobravo - Vendedor exclusivo de lotes de 1,000 m² en Finca Rio Bravo. Tu oportunidad de invertir en terrenos con excelente potencial.
+                  {loteConfig.contact.companyName} - Vendedor exclusivo de lotes desde 1,000 m² en {loteConfig.location.name}. Tu oportunidad de invertir en terrenos con excelente potencial.
                 </p>
                 <div className="space-y-2">
-                  <div className="flex items-center">
-                    <span className="mr-2">📞</span>
-                    <span>📱 312 491 5127</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-2">📞</span>
-                    <span>📱 312 512 3639</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-2">📞</span>
-                    <span>📱 +1 (954) 931-5153</span>
-                  </div>
+                  {loteConfig.contact.whatsappNumbers.map((phone, index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="mr-2">📞</span>
+                      <span>📱 {phone.display}</span>
+                    </div>
+                  ))}
                   <div className="flex items-center mt-3">
                     <span className="mr-2">📍</span>
-                    <span>Finca Rio Bravo, Sector Román</span>
+                    <span>{loteConfig.location.name}, {loteConfig.location.sector}</span>
                   </div>
                 </div>
               </div>
@@ -590,22 +463,22 @@ export default function Home() {
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
-                    <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
+                    <span>{loteConfig.contact.hours.weekdays}</span>
                   </div>
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
-                    <span>Sábados: 9:00 AM - 2:00 PM</span>
+                    <span>{loteConfig.contact.hours.saturday}</span>
                   </div>
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
-                    <span>Domingos: Cerrado</span>
+                    <span>{loteConfig.contact.hours.sunday}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="text-center mt-8 pt-6 border-t border-white/20">
-              <p className="text-sm">© 2025 Riobravo. Todos los derechos reservados.</p>
+              <p className="text-sm">© {loteConfig.contact.year} {loteConfig.contact.companyName}. Todos los derechos reservados.</p>
             </div>
           </div>
         </div>
@@ -614,7 +487,10 @@ export default function Home() {
       {/* Mobile WhatsApp Float */}
       <div className="md:hidden fixed bottom-6 right-6 z-50">
         <button
-          onClick={() => handleWhatsAppClick(whatsappNumbers[0].number, whatsappNumbers[0].country)}
+          onClick={() => handleWhatsAppClick(
+            loteConfig.contact.whatsappNumbers[0].number, 
+            loteConfig.contact.whatsappNumbers[0].country
+          )}
           className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg text-white"
         >
           📱
