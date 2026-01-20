@@ -240,13 +240,13 @@ export default function Home() {
               <div className="bg-gray-50 rounded-lg p-4 mb-4">
                 <div className="text-center mb-3">
                   <div className="text-sm text-gray-600">Precio total</div>
-                  <div className="text-2xl font-bold text-green-600">$100.000.000,00</div>
+                  <div className="text-2xl font-bold text-green-600">$60.000.000,00</div>
                 </div>
                 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Pago inicial:</span>
-                    <span className="font-medium">$100.000.000,00</span>
+                    <span className="font-medium">$60.000.000,00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Saldo a financiar:</span>
