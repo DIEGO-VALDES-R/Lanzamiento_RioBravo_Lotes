@@ -4,11 +4,11 @@ import { loteConfig } from '@/data/loteConfig';
 
 export default function Home() {
   const handleWhatsAppClick = (phoneNumber: string, country: string, interest?: string) => {
-<<<<<<< HEAD
+
     let message = loteConfig.whatsappMessages.default;
-=======
+
     let message = 'Hola, estoy interesado en obtener información sobre los lotes en Finca Rio Bravo.';
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
     if (interest) {
       message += ` Me interesa: ${interest}.`;
     }
@@ -74,11 +74,11 @@ export default function Home() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-<<<<<<< HEAD
+
               {loteConfig.hero.title}
-=======
+
               Riobravo - Lotes Exclusivos desde 1000 m²
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
             </h1>
             
             <p className="text-xl text-gray-100 mb-8 drop-shadow">
@@ -87,28 +87,28 @@ export default function Home() {
             
             <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/20">
               <div className="text-4xl font-bold text-white mb-6">
-<<<<<<< HEAD
+
                 {loteConfig.hero.price} por lote
-=======
+
                 Desde $65.000.000,00 por lote
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-<<<<<<< HEAD
+
                   <div className="text-2xl font-bold text-white mb-1">{loteConfig.hero.surface}</div>
                   <div className="text-gray-200">Superficie</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                   <div className="text-2xl font-bold text-green-300 mb-1">{loteConfig.hero.availableLots}</div>
-=======
+
                   <div className="text-2xl font-bold text-white mb-1">1000 m²</div>
                   <div className="text-gray-200">Superficie</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                   <div className="text-2xl font-bold text-green-300 mb-1">3</div>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                   <div className="text-gray-200">Lotes disponibles</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<<<<<<< HEAD
+
             {loteConfig.locationBenefits.map((benefit, index) => (
               <div key={index} className="text-center">
                 <div className={`w-16 h-16 ${benefit.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
@@ -185,7 +185,7 @@ export default function Home() {
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
-=======
+
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💧</span>
@@ -217,7 +217,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2">Acceso Fácil</h3>
               <p className="text-gray-600">A pocos minutos del casco urbano, con vías de fácil acceso</p>
             </div>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
           </div>
         </div>
       </section>
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-<<<<<<< HEAD
+
             {loteConfig.plans.map((plan) => (
               <div 
                 key={plan.id}
@@ -257,7 +257,7 @@ export default function Home() {
                   <div className="text-center mb-3">
                     <div className="text-sm text-gray-600">Precio total</div>
                     <div className="text-2xl font-bold text-green-600">{plan.total}</div>
-=======
+
             {/* Plan 1: Contado - Más Popular */}
             <div className="bg-white rounded-lg shadow-xl p-6 border-2 border-green-500 relative">
               <div className="absolute top-0 right-0 bg-green-600 text-white px-3 py-1 text-sm font-medium">
@@ -279,7 +279,7 @@ export default function Home() {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Pago inicial:</span>
                     <span className="font-medium">$60.000.000,00</span>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                   </div>
                   
                   <div className="space-y-2 text-sm">
@@ -356,11 +356,11 @@ export default function Home() {
                 </div>
               </div>
               
-<<<<<<< HEAD
+
               <div className="text-center">
                 <div className="text-xl font-semibold text-gray-900 mb-2">{loteConfig.cabins.totalNote}</div>
                 <div className="text-sm text-gray-600">✨ Tú imaginas, nosotros lo construimos</div>
-=======
+
               <div className="bg-gray-50 rounded-lg p-4 mb-4">
                 <div className="text-center mb-3">
                   <div className="text-sm text-gray-600">Precio total</div>
@@ -381,12 +381,12 @@ export default function Home() {
                     <span className="font-medium">4 de $7.875.000,00</span>
                   </div>
                 </div>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
               </div>
             </div>
           </div>
 
-<<<<<<< HEAD
+
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               🏡 Opciones disponibles
@@ -410,7 +410,7 @@ export default function Home() {
                   <p className={cabin.isSpecial ? 'text-gray-700' : 'text-gray-600'}>
                     {cabin.description}
                   </p>
-=======
+
             {/* Plan 3: 25% Inicial */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200">
               <div className="text-center mb-4">
@@ -438,7 +438,7 @@ export default function Home() {
                     <span className="text-gray-600">Cuotas:</span>
                     <span className="font-medium">6 de $8.125.000,00</span>
                   </div>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                 </div>
                 <p className={`text-sm ${cabin.isSpecial ? 'text-gray-700' : 'text-gray-700'} text-center mb-4`}>
                   {cabin.detail}
@@ -482,7 +482,7 @@ export default function Home() {
                 ✨ Tú imaginas, nosotros lo construimos
               </p>
             </div>
-<<<<<<< HEAD
+
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {loteConfig.contact.whatsappNumbers.map((phone, index) => (
@@ -494,7 +494,7 @@ export default function Home() {
                   📱 {phone.display}
                 </button>
               ))}
-=======
+
 
             {/* Plan 4: Personalizada */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200">
@@ -548,19 +548,19 @@ export default function Home() {
               <button className="w-full bg-gray-900 text-white py-3 rounded-lg mt-4 hover:bg-gray-800">
                 Seleccionar
               </button>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
             </div>
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
+
       {/* SÉPTIMO BLOQUE - Strategic Location */}
       <section className="py-16 bg-gray-50">
-=======
+
       {/* QUINTO BLOQUE - Cabin Models */}
       <section className="py-16 bg-white">
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
         <div className="max-w-6xl mx-auto px-4">
           {/* Hero Section para Cabañas */}
           <div className="text-center mb-12">
@@ -772,15 +772,15 @@ export default function Home() {
                   <span className="text-2xl">📍</span>
                 </div>
                 <div>
-<<<<<<< HEAD
+
                   <h3 className="text-xl font-bold">{loteConfig.location.name}</h3>
                   <p className="text-gray-600">
                     {loteConfig.location.sector}, a {loteConfig.location.distance}. Ubicación privilegiada con fácil acceso.
                   </p>
-=======
+
                   <h3 className="text-xl font-bold">Finca Rio Bravo</h3>
                   <p className="text-gray-600">Sector Román, a 10 minutos del casco urbano del municipio de Arboledas. Ubicación privilegiada con fácil acceso.</p>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                 </div>
               </div>
 
@@ -805,15 +805,15 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Visítanos</h3>
                 <p className="text-gray-600 mb-4">
-<<<<<<< HEAD
+
                   {loteConfig.location.name}<br />
                   {loteConfig.location.sector}, {loteConfig.location.municipality}<br />
                   {loteConfig.location.department}, {loteConfig.location.country}
-=======
+
                   Finca Rio Bravo<br />
                   Sector Román, Arboledas<br />
                   Norte de Santander, Colombia
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                 </p>
                 <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
                   🗺️ Abrir en Google Maps
@@ -827,11 +827,11 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Ubicación Premium</h4>
-<<<<<<< HEAD
+
                     <p className="text-gray-600">{loteConfig.location.name}, {loteConfig.location.sector}</p>
-=======
+
                     <p className="text-gray-600">Finca Rio Bravo, Sector Román</p>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">Visítanos para conocer los terrenos</p>
@@ -845,7 +845,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Contacto</h3>
                 <p className="mb-4">
-<<<<<<< HEAD
+
                   {loteConfig.contact.companyName} - Vendedor exclusivo de lotes desde 1,000 m² en {loteConfig.location.name}. Tu oportunidad de invertir en terrenos con excelente potencial.
                 </p>
                 <div className="space-y-2">
@@ -858,7 +858,7 @@ export default function Home() {
                   <div className="flex items-center mt-3">
                     <span className="mr-2">📍</span>
                     <span>{loteConfig.location.name}, {loteConfig.location.sector}</span>
-=======
+
                   Riobravo - Vendedor exclusivo de lotes desde 1,000 m² en Finca Rio Bravo. Tu oportunidad de invertir en terrenos con excelente potencial.
                 </p>
                 <div className="space-y-2">
@@ -877,7 +877,7 @@ export default function Home() {
                   <div className="flex items-center mt-3">
                     <span className="mr-2">📍</span>
                     <span>Finca Rio Bravo, Sector Román</span>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                   </div>
                 </div>
               </div>
@@ -887,7 +887,7 @@ export default function Home() {
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
-<<<<<<< HEAD
+
                     <span>{loteConfig.contact.hours.weekdays}</span>
                   </div>
                   <div className="flex items-center">
@@ -897,7 +897,7 @@ export default function Home() {
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
                     <span>{loteConfig.contact.hours.sunday}</span>
-=======
+
                     <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex items-center">
@@ -907,18 +907,18 @@ export default function Home() {
                   <div className="flex items-center">
                     <span className="mr-2">🕐</span>
                     <span>Domingos: Cerrado</span>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="text-center mt-8 pt-6 border-t border-white/20">
-<<<<<<< HEAD
+
               <p className="text-sm">© {loteConfig.contact.year} {loteConfig.contact.companyName}. Todos los derechos reservados.</p>
-=======
+
               <p className="text-sm">© 2025 Riobravo. Todos los derechos reservados.</p>
->>>>>>> 976a3c8adc67e33cb32c69141bb770f32d36d4f2
+
             </div>
           </div>
         </div>
