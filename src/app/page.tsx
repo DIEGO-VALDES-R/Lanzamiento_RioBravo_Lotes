@@ -290,21 +290,21 @@ export default function Home() {
               <div className="bg-gray-50 rounded-lg p-4 mb-4">
                 <div className="text-center mb-3">
                   <div className="text-sm text-gray-600">Precio total</div>
-                  <div className="text-2xl font-bold text-green-600">$105.000.000,00</div>
+                  <div className="text-2xl font-bold text-green-600">$63.000.000,00</div>
                 </div>
                 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Pago inicial:</span>
-                    <span className="font-medium">$52.500.000,00</span>
+                    <span className="font-medium">$31.500.000,00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Saldo a financiar:</span>
-                    <span className="font-medium">$52.500.000,00</span>
+                    <span className="font-medium">$31.500.000,00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Cuotas:</span>
-                    <span className="font-medium">4 de $13.125.000,00</span>
+                    <span className="font-medium">4 de $7.875.000,00</span>
                   </div>
                 </div>
               </div>
@@ -344,21 +344,21 @@ export default function Home() {
               <div className="bg-gray-50 rounded-lg p-4 mb-4">
                 <div className="text-center mb-3">
                   <div className="text-sm text-gray-600">Precio total</div>
-                  <div className="text-2xl font-bold text-green-600">$107.000.000,00</div>
+                  <div className="text-2xl font-bold text-green-600">$65.000.000,00</div>
                 </div>
                 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Pago inicial:</span>
-                    <span className="font-medium">$26.750.000,00</span>
+                    <span className="font-medium">$16.250.000,00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Saldo a financiar:</span>
-                    <span className="font-medium">$80.250.000,00</span>
+                    <span className="font-medium">$48.750.000,00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Cuotas:</span>
-                    <span className="font-medium">6 de $13.375.000,00</span>
+                    <span className="font-medium">6 de $8.125.000,00</span>
                   </div>
                 </div>
               </div>
@@ -465,7 +465,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6 text-center mb-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="text-xl font-bold text-green-600 mb-1">Lote (1500 m²)</div>
-                  <div className="text-gray-700">Desde $107 millones</div>
+                  <div className="text-gray-700">Desde $67 millones</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="text-xl font-bold text-green-600 mb-1">Cabaña prefabricada</div>
