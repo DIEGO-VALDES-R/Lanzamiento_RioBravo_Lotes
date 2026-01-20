@@ -74,7 +74,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Riobravo - Lotes Exclusivos de 1500 m²
+              Riobravo - Lotes Exclusivos desde 1000 m²
             </h1>
             
             <p className="text-xl text-gray-100 mb-8 drop-shadow">
@@ -83,16 +83,16 @@ export default function Home() {
             
             <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/20">
               <div className="text-4xl font-bold text-white mb-6">
-                Desde $107.000.000,00 por lote
+                Desde $67.000.000,00 por lote
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-white mb-1">1500 m²</div>
+                  <div className="text-2xl font-bold text-white mb-1">1000 m²</div>
                   <div className="text-gray-200">Superficie</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-green-300 mb-1">10</div>
+                  <div className="text-2xl font-bold text-green-300 mb-1">3</div>
                   <div className="text-gray-200">Lotes disponibles</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
