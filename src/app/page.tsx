@@ -83,7 +83,7 @@ export default function Home() {
             
             <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/20">
               <div className="text-4xl font-bold text-white mb-6">
-                Desde $67.000.000,00 por lote
+                Desde $65.000.000,00 por lote
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 text-center">
