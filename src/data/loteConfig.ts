@@ -11,84 +11,84 @@ export const loteConfig = {
   // Información del Hero
   hero: {
     surface: "1000 m²",
-    price: formatCOP(65_000_000), // Precio base desde
+    price: formatCOP(100_000_000), // Precio base desde
     availableLots: 3,
     location: "Finca Rio Bravo",
     badge: "PRECIO DE LANZAMIENTO",
-    title: "Riobravo - Lotes Exclusivos desde 1000 m²",
-    subtitle: "Tu oportunidad de invertir en el futuro con terrenos premium en Finca Rio Bravo",
+    title: "Molino Campestre - Lotes Exclusivos de 1000 m²",
+    subtitle: "Tu oportunidad de invertir en el futuro con terrenos premium en Molino Campestre - Finca Rio Bravo",
   },
 
-  // Planes de financiamiento
-  plans: [
-    {
-      id: "contado",
-      emoji: "💰",
-      title: "Pago de Contado (100%)",
-      description: "Descuento especial",
-      total: formatCOP(60_000_000),
-      initial: "$60.000.000,00",
-      balance: "$0",
-      quotas: null,
-      benefit: "✅ Descuento de $7,000,000 por pago total inmediato",
-      benefitBg: "bg-green-50",
-      benefitText: "text-green-800",
-      borderClass: "border-green-500",
-      isPopular: true,
-      badgeText: "Más Popular",
-    },
-    {
-      id: "plan50",
-      emoji: "💸",
-      title: "50% Inicial + 4 Cuotas",
-      description: "Plazo corto",
-      total: formatCOP(63_000_000),
-      initial: "$31.500.000,00",
-      balance: "$31.500.000,00",
-      quotas: "4 de $7.875.000,00",
-      benefit: "✅ Descuento de $2,000,000. Plazo máximo 4 meses",
-      benefitBg: "bg-green-50",
-      benefitText: "text-green-800",
-      borderClass: "border-gray-200",
-      isPopular: false,
-    },
-    {
-      id: "plan25",
-      emoji: "🧾",
-      title: "25% Inicial + 6 Cuotas",
-      description: "Plazo medio",
-      total: formatCOP(65_000_000),
-      initial: "$16.250.000,00",
-      balance: "$48.750.000,00",
-      quotas: "6 de $8.125.000,00",
-      benefit: "📋 Sin descuento. Plazo máximo 6 meses",
-      benefitBg: "bg-blue-50",
-      benefitText: "text-blue-800",
-      borderClass: "border-gray-200",
-      isPopular: false,
-    },
-    {
-      id: "personalizado",
-      emoji: "⚙️",
-      title: "Opción Personalizada",
-      description: "Más del 50% inicial",
-      total: "A convenir",
-      initial: "Más del 50%",
-      balance: "Saldo restante",
-      quotas: "A definir",
-      benefit: "✨ Descuento proporcional según pago y plazo",
-      benefitBg: "bg-purple-50",
-      benefitText: "text-purple-800",
-      borderClass: "border-gray-200",
-      isPopular: false,
-    },
-  ],
+  // Planes de financiamiento CORREGIDOS
+plans: [
+  {
+    id: "contado",
+    emoji: "💰",
+    title: "Pago de Contado (100%)",
+    description: "Descuento especial",
+    total: formatCOP(70_000_000),
+    initial: "$70.000.000,00",
+    balance: "$0",
+    quotas: null,
+    benefit: "✅ Descuento de $30,000,000 por pago total inmediato",
+    benefitBg: "bg-green-50",
+    benefitText: "text-green-800",
+    borderClass: "border-green-500",
+    isPopular: true,
+    badgeText: "Más Popular",
+  },
+  {
+    id: "plan60", // Cambié de plan50 a plan60 para mejor claridad
+    emoji: "💸",
+    title: "60% Inicial + 4 Cuotas",
+    description: "Plazo corto",
+    total: formatCOP(73_000_000),
+    initial: "$43.800.000,00", // 60% de 73,000,000
+    balance: "$29.200.000,00", // 40% de 73,000,000
+    quotas: "4 de $7.300.000,00", // 29,200,000 ÷ 4
+    benefit: "✅ Descuento de $27,000,000. Plazo máximo 4 meses",
+    benefitBg: "bg-green-50",
+    benefitText: "text-green-800",
+    borderClass: "border-gray-200",
+    isPopular: false,
+  },
+  {
+    id: "plan25",
+    emoji: "🧾",
+    title: "25% Inicial + 6 Cuotas",
+    description: "Plazo medio",
+    total: formatCOP(75_000_000), // Cambié de 65 a 75
+    initial: "$18.750.000,00", // 25% de 75,000,000
+    balance: "$56.250.000,00", // 75% de 75,000,000
+    quotas: "6 de $9.375.000,00", // 56,250,000 ÷ 6
+    benefit: "✅ Descuento de $25,000,000. Plazo máximo 6 meses",
+    benefitBg: "bg-green-50", // Cambié a verde ya que también tiene descuento
+    benefitText: "text-green-800",
+    borderClass: "border-gray-200",
+    isPopular: false,
+  },
+  {
+    id: "personalizado",
+    emoji: "⚙️",
+    title: "Opción Personalizada",
+    description: "Más del 50% inicial",
+    total: "A convenir",
+    initial: "Más del 50%",
+    balance: "Saldo restante",
+    quotas: "A definir",
+    benefit: "✨ Descuento proporcional según pago y plazo",
+    benefitBg: "bg-purple-50",
+    benefitText: "text-purple-800",
+    borderClass: "border-gray-200",
+    isPopular: false,
+  },
+],
 
   // Opciones de cabañas
   cabins: {
     heroTitle: "Lote + Cabaña Prefabricada: el espacio perfecto para tu estilo de vida",
     heroSubtitle: "Imagina tu lugar ideal: un terreno de 1000 m² y una cabaña diseñada a tu medida.\nTú eliges el diseño, los acabados y el tamaño. Nosotros hacemos realidad tu proyecto.",
-    lotePrice: "Desde $67 millones",
+    lotePrice: "Desde $65.000.000",
     loteSize: "1000 m²",
     cabinPrice: "Valor según diseño y acabados",
     totalNote: "Total: a convenir según tu proyecto personalizado",
@@ -215,7 +215,7 @@ export const loteConfig = {
       sunday: "Domingos: Cerrado",
     },
     companyName: "Riobravo",
-    year: "2025",
+    year: "2026",
   },
 
   // Mensajes de WhatsApp
