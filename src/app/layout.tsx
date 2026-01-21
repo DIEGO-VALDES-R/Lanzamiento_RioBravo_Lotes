@@ -14,24 +14,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Molino Campestre Río Bravo - Lotes Exclusivos de 1000 m²",
+  description: "Tu oportunidad de invertir en el futuro con terrenos con alta valorización. Lotes exclusivos de 1000 m² en Finca Río Bravo. Precio de lanzamiento: $70.000.000",
+  keywords: ["lotes", "terrenos", "inversión", "Río Bravo", "Molino Campestre", "bienes raíces", "Colombia", "1000 m²", "finca"],
+  authors: [{ name: "Riobravo" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico", // Asegúrate de tener tu favicon en la carpeta public
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Molino Campestre Río Bravo - Lotes Exclusivos",
+    description: "Oferta exclusiva de lanzamiento: Lotes de 1000 m² desde $70.000.000. Solo 3 lotes disponibles a este precio especial.",
+    url: "https://molinocampestreriobravo.vercel.app",
+    siteName: "Molino Campestre Río Bravo",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg", // Agrega una imagen Open Graph en tu carpeta public
+        width: 1200,
+        height: 630,
+        alt: "Molino Campestre Río Bravo - Lotes Exclusivos",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Molino Campestre Río Bravo - Lotes Exclusivos de 1000 m²",
+    description: "Precio de lanzamiento: $70.000.000. Solo 3 lotes disponibles. Invierte en terrenos con alta valorización.",
+    images: ["/og-image.jpg"], // La misma imagen que Open Graph
   },
 };
 
