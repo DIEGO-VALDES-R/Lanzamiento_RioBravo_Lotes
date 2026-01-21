@@ -46,7 +46,7 @@ plans: [
     initial: "$43.800.000,00", // 60% de 73,000,000
     balance: "$29.200.000,00", // 40% de 73,000,000
     quotas: "4 de $7.300.000,00", // 29,200,000 ÷ 4
-    benefit: "✅ Descuento de $27,000,000. Plazo máximo 4 meses",
+    benefit: "✅ Descuento de $27,000,000. Plazo a convenir",
     benefitBg: "bg-green-50",
     benefitText: "text-green-800",
     borderClass: "border-gray-200",
@@ -61,7 +61,7 @@ plans: [
     initial: "$18.750.000,00", // 25% de 75,000,000
     balance: "$56.250.000,00", // 75% de 75,000,000
     quotas: "6 de $9.375.000,00", // 56,250,000 ÷ 6
-    benefit: "✅ Descuento de $25,000,000. Plazo máximo 6 meses",
+    benefit: "✅ Descuento de $25,000,000. Plazo a convenir",
     benefitBg: "bg-green-50", // Cambié a verde ya que también tiene descuento
     benefitText: "text-green-800",
     borderClass: "border-gray-200",
@@ -159,7 +159,7 @@ plans: [
     {
       emoji: "🏠",
       title: "Servicios",
-      description: "Agua",
+      description: " ",
     },
   ],
 
@@ -195,11 +195,11 @@ plans: [
   location: {
     name: "Finca Rio Bravo",
     sector: "Sector Román",
-    municipality: "Arboledas",
+    municipality: "Cucutilla",
     department: "Norte de Santander",
     country: "Colombia",
-    distance: "10 minutos del casco urbano del municipio de Arboledas",
-    fullAddress: "Finca Rio Bravo, Sector Román, Arboledas, Norte de Santander, Colombia",
+    distance: "a menos de 10 minutos del casco urbano del municipio de Arboledas",
+    fullAddress: "Finca Rio Bravo, Sector Román, Cucutilla, Norte de Santander, Colombia",
   },
 
   // Información de contacto
