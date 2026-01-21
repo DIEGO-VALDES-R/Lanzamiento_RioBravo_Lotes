@@ -61,54 +61,90 @@ export default function Home() {
         </div>
         
         <div className="relative z-10">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <div className="inline-flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg">
-              <span>🚀</span>
-              <span>{loteConfig.hero.badge}</span>
+          <div className="max-w-5xl mx-auto px-4 text-center">
+            {/* Badge de lanzamiento más grande */}
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-3 rounded-full text-base font-bold mb-8 shadow-2xl animate-pulse">
+              <span className="text-2xl">🔥</span>
+              <span className="uppercase tracking-wide">{loteConfig.hero.badge}</span>
+              <span className="text-2xl">🔥</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               {loteConfig.hero.title}
             </h1>
             
-            <p className="text-xl text-gray-100 mb-8 drop-shadow">
+            <p className="text-xl md:text-2xl text-gray-100 mb-10 drop-shadow">
               {loteConfig.hero.subtitle}
             </p>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 mb-8 border border-white/20">
-              <div className="text-4xl font-bold text-white mb-6">
-                Desde {loteConfig.hero.price} por lote
+            {/* Sección de precios destacada */}
+            <div className="bg-white rounded-3xl shadow-2xl p-8 mb-8 max-w-4xl mx-auto">
+              {/* Precio de lanzamiento destacado */}
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 mb-6 border-2 border-red-300">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <span className="text-3xl">⚡</span>
+                  <h3 className="text-2xl font-bold text-red-700 uppercase">Oferta Exclusiva de Lanzamiento</h3>
+                  <span className="text-3xl">⚡</span>
+                </div>
+                <div className="text-5xl md:text-6xl font-black text-green-600 mb-2">
+                  {loteConfig.hero.price}
+                </div>
+                <p className="text-lg font-semibold text-gray-700">
+                  ¡Solo {loteConfig.hero.availableLots} lotes disponibles a este precio especial!
+                </p>
+                <div className="mt-4 inline-block bg-green-600 text-white px-6 py-2 rounded-full text-sm font-bold">
+                  AHORRA $30.000.000 EN PRECIO DE LANZAMIENTO
+                </div>
               </div>
               
+              {/* Precio regular */}
+              <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                <p className="text-gray-600 mb-1">Precio regular después del lanzamiento:</p>
+                <div className="text-3xl font-bold text-gray-800 line-through">
+                  $100.000.000
+                </div>
+              </div>
+
+              {/* Información de los lotes */}
               <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-white mb-1">{loteConfig.hero.surface}</div>
-                  <div className="text-gray-200">Superficie</div>
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-5 border-2 border-green-200">
+                  <div className="text-3xl font-bold text-green-700 mb-1">{loteConfig.hero.surface}</div>
+                  <div className="text-gray-700 font-medium">Superficie por lote</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-green-300 mb-1">{loteConfig.hero.availableLots}</div>
-                  <div className="text-gray-200">Lotes disponibles</div>
+                <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-5 border-2 border-red-200">
+                  <div className="text-3xl font-bold text-red-600 mb-1">{loteConfig.hero.availableLots}</div>
+                  <div className="text-gray-700 font-medium">Lotes en lanzamiento</div>
+                  <div className="text-xs text-red-600 font-semibold mt-1"></div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-green-300 mb-1">📍</div>
-                  <div className="text-gray-200">{loteConfig.hero.location}</div>
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-5 border-2 border-blue-200">
+                  <div className="text-3xl mb-1">📍</div>
+                  <div className="text-gray-700 font-medium">{loteConfig.hero.location}</div>
+                  <div className="text-xs text-blue-600 font-semibold mt-1">Ubicación Premium</div>
                 </div>
               </div>
             </div>
 
+            {/* Botones de acción */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 shadow-lg"
+                className="bg-green-600 text-white px-10 py-4 rounded-xl hover:bg-green-700 shadow-2xl text-lg font-bold transform hover:scale-105 transition-all"
                 onClick={() => handleWhatsAppClick(
                   loteConfig.contact.whatsappNumbers[0].number, 
                   loteConfig.contact.whatsappNumbers[0].country
                 )}
               >
-                📱 Contactar por WhatsApp
+                📱 ¡Aprovecha el Precio de Lanzamiento!
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-green-800 shadow-lg backdrop-blur-sm">
-                Ver opciones de financiamiento
+              <button className="border-3 border-white text-white px-10 py-4 rounded-xl hover:bg-white hover:text-green-800 shadow-2xl backdrop-blur-sm text-lg font-bold transform hover:scale-105 transition-all">
+                💰 Ver Opciones de Financiamiento
               </button>
+            </div>
+
+            {/* Contador de urgencia */}
+            <div className="mt-8 bg-white/20 backdrop-blur-md rounded-xl p-4 inline-block border border-white/30">
+              <p className="text-white text-sm font-semibold">
+                ⏰ Oferta por tiempo limitado | 🎯 Solo {loteConfig.hero.availableLots} unidades disponibles
+              </p>
             </div>
           </div>
         </div>

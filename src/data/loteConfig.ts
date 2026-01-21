@@ -11,12 +11,12 @@ export const loteConfig = {
   // Información del Hero
   hero: {
     surface: "1000 m²",
-    price: formatCOP(100_000_000), // Precio base desde
+    price: formatCOP(70_000_000), // Precio base desde
     availableLots: 3,
     location: "Finca Rio Bravo",
     badge: "PRECIO DE LANZAMIENTO",
     title: "Molino Campestre - Lotes Exclusivos de 1000 m²",
-    subtitle: "Tu oportunidad de invertir en el futuro con terrenos premium en Molino Campestre - Finca Rio Bravo",
+    subtitle: "Tu oportunidad de invertir en el futuro con terrenos con alta valorización",
   },
 
   // Planes de financiamiento CORREGIDOS
