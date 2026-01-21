@@ -88,7 +88,7 @@ plans: [
   cabins: {
     heroTitle: "Lote + Cabaña Prefabricada: el espacio perfecto para tu estilo de vida",
     heroSubtitle: "Imagina tu lugar ideal: un terreno de 1000 m² y una cabaña diseñada a tu medida.\nTú eliges el diseño, los acabados y el tamaño. Nosotros hacemos realidad tu proyecto.",
-    lotePrice: "Desde $65.000.000",
+    lotePrice: "Desde $70.000.000",
     loteSize: "1000 m²",
     cabinPrice: "Valor según diseño y acabados",
     totalNote: "Total: a convenir según tu proyecto personalizado",
